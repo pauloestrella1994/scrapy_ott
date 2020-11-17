@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class AmazonScrapyPipeline:
+class MercadoLivrePipeline:
     def process_item(self, item, spider):
         return item
