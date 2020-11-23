@@ -12,8 +12,8 @@ class MercadoLivreSpider(scrapy.Spider):
         prices = response.xpath('//div[has-class("ui-search-price--size-medium")]' +
                                 '//span[has-class("price-tag ui-search-price__part")]' + 
                                 '//span[has-class("price-tag-fraction")]/text()').getall()
-        yield {
-            'product_name': product_name,
-            'price': prices
-        }
+        
+        data = dict(zip(product_name, prices))
+        
+        return data
 
